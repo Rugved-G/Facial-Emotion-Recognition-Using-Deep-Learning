@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Emotion Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="home-screen">
+        <h1>Live Emotion Analytics</h1>
+        <p>This application uses your webcam to detect facial emotions in real-time. Your video is processed locally and never leaves your computer.</p>
+        <button id="startButton">Start Detection</button>
+    </div>
+
+    <div id="app-container" class="hidden">
+        <div class="video-container">
+            <video id="video" width="720" height="560" autoplay muted playsinline></video>
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="results-container">
+            <h2 id="status">Initializing...</h2>
+            <div class="emotion-bars">
+                <div class="emotion">
+                    <span class="emotion-label">Happy</span>
+                    <div class="bar-container">
+                        <div class="bar-progress" id="happy-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="emotion">
+                    <span class="emotion-label">Sad</span>
+                    <div class="bar-container">
+                        <div class="bar-progress" id="sad-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="emotion">
+                    <span class="emotion-label">Angry</span>
+                    <div class="bar-container">
+                        <div class="bar-progress" id="angry-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="emotion">
+                    <span class="emotion-label">Neutral</span>
+                    <div class="bar-container">
+                        <div class="bar-progress" id="neutral-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="emotion">
+                    <span class="emotion-label">Surprised</span>
+                    <div class="bar-container">
+                        <div class="bar-progress" id="surprised-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="stopButton">Stop Detection</button>
+        </div>
+    </div>
+
+    <script defer src="face-api.min.js"></script>
+    <script defer src="script.js"></script> 
+</body>
+</html>
